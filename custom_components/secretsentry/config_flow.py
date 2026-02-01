@@ -31,15 +31,16 @@ class SecretSentryConfigFlow(ConfigFlow, domain=DOMAIN):
     @callback
     def async_get_options_flow(config_entry: ConfigEntry) -> OptionsFlow:
         """Get the options flow for this handler."""
-        return SecretSentryOptionsFlowHandler(config_entry)
+        # Note: Do NOT pass config_entry to constructor
+        # Modern HA sets config_entry automatically on the handler
+        return SecretSentryOptionsFlowHandler()
 
 
 class SecretSentryOptionsFlowHandler(OptionsFlow):
     """Handle SecretSentry options."""
 
-    def __init__(self, config_entry: ConfigEntry) -> None:
-        """Initialize options flow."""
-        self.config_entry = config_entry
+    # Note: Do NOT define __init__ that sets self.config_entry
+    # The base OptionsFlow class provides config_entry as a property automatically
 
     async def async_step_init(self, user_input: dict[str, Any] | None = None):
         """Manage the options."""
