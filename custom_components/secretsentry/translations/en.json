@@ -1,0 +1,83 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure SecretSentry",
+        "description": "SecretSentry scans your Home Assistant configuration for potential security issues like exposed secrets, missing gitignore entries, and insecure HTTP settings.\n\nDefault scan interval is {default_interval} minutes.",
+        "data": {
+          "scan_interval": "Scan interval (seconds)"
+        },
+        "data_description": {
+          "scan_interval": "How often to scan for security issues (300-86400 seconds)"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "SecretSentry is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "SecretSentry Options",
+        "description": "Configure the scan interval for security checks.",
+        "data": {
+          "scan_interval": "Scan interval (seconds)"
+        },
+        "data_description": {
+          "scan_interval": "How often to scan for security issues (300-86400 seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_findings": {
+        "name": "Total Security Findings"
+      },
+      "high_severity_findings": {
+        "name": "High Severity Findings"
+      }
+    }
+  },
+  "issues": {
+    "r001": {
+      "title": "Inline Secret Detected",
+      "description": "A sensitive configuration key contains a hardcoded value instead of using !secret reference.\n\n**File:** {file_path}\n**Line:** {line_number}\n**Evidence:** {evidence}\n\n**Recommendation:** {recommendation}"
+    },
+    "r002": {
+      "title": "JWT Token Detected",
+      "description": "A JSON Web Token (JWT) was found in configuration files.\n\n**File:** {file_path}\n**Line:** {line_number}\n**Evidence:** {evidence}\n\n**Recommendation:** {recommendation}"
+    },
+    "r003": {
+      "title": "PEM Private Key Detected",
+      "description": "A PEM-encoded private key block was detected in configuration.\n\n**File:** {file_path}\n**Line:** {line_number}\n**Evidence:** {evidence}\n\n**Recommendation:** {recommendation}"
+    },
+    "r004": {
+      "title": "Missing Secret Reference",
+      "description": "A !secret reference points to a key that does not exist in secrets.yaml.\n\n**File:** {file_path}\n**Line:** {line_number}\n**Evidence:** {evidence}\n\n**Recommendation:** {recommendation}"
+    },
+    "r005": {
+      "title": "Gitignore Missing Recommended Entries",
+      "description": "The .gitignore file is missing recommended entries to protect sensitive files.\n\n**File:** {file_path}\n**Evidence:** {evidence}\n\n**Recommendation:** {recommendation}"
+    },
+    "r006": {
+      "title": "HTTP Security Configuration Issue",
+      "description": "The HTTP integration has security settings that may allow brute force attacks.\n\n**File:** {file_path}\n**Line:** {line_number}\n**Evidence:** {evidence}\n\n**Recommendation:** {recommendation}"
+    },
+    "r007": {
+      "title": "Overly Broad Trusted Proxies",
+      "description": "The trusted_proxies configuration allows all IP addresses, which is insecure.\n\n**File:** {file_path}\n**Line:** {line_number}\n**Evidence:** {evidence}\n\n**Recommendation:** {recommendation}"
+    }
+  },
+  "services": {
+    "scan_now": {
+      "name": "Scan Now",
+      "description": "Trigger an immediate security scan of the Home Assistant configuration."
+    },
+    "export_report": {
+      "name": "Export Report",
+      "description": "Export a masked JSON report of all findings to /config/secretsentry_report.json."
+    }
+  }
+}

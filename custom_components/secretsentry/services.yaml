@@ -1,0 +1,7 @@
+scan_now:
+  name: Scan Now
+  description: Trigger an immediate security scan of the Home Assistant configuration.
+
+export_report:
+  name: Export Report
+  description: Export a masked JSON report of all findings to /config/secretsentry_report.json.
