@@ -8,7 +8,6 @@ import voluptuous as vol
 
 from homeassistant.config_entries import ConfigFlow, OptionsFlow, ConfigEntry
 from homeassistant.core import callback
-from homeassistant.components.repairs import issue_registry as ir
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -100,11 +99,19 @@ class SecretSentryOptionsFlowHandler(OptionsFlow):
 
     async def async_step_clear_repairs(self, user_input: dict[str, Any] | None = None):
         """Clear all SecretSentry repair issues."""
+        # Lazy import to avoid load-time errors
+        try:
+            from homeassistant.helpers import issue_registry as ir
+        except ImportError:
+            from homeassistant.components.repairs import issue_registry as ir
+
         if user_input is None:
             # Count current repairs
-            issue_reg = ir.async_get(self.hass)
-            count = sum(1 for issue_id, issue in issue_reg.issues.items()
-                       if issue.domain == DOMAIN)
+            try:
+                issue_reg = ir.async_get(self.hass)
+                count = sum(1 for key in issue_reg.issues if key[0] == DOMAIN)
+            except Exception:
+                count = 0
             return self.async_show_form(
                 step_id="clear_repairs",
                 data_schema=vol.Schema({}),
@@ -114,12 +121,9 @@ class SecretSentryOptionsFlowHandler(OptionsFlow):
         # Delete all SecretSentry repair issues
         try:
             issue_reg = ir.async_get(self.hass)
-            issues_to_delete = [
-                issue_id for issue_id, issue in issue_reg.issues.items()
-                if issue.domain == DOMAIN
-            ]
-            for issue_id in issues_to_delete:
-                ir.async_delete_issue(self.hass, DOMAIN, issue_id)
+            issues_to_delete = [key for key in issue_reg.issues if key[0] == DOMAIN]
+            for key in issues_to_delete:
+                ir.async_delete_issue(self.hass, key[0], key[1])
 
             # Also clear the stored fingerprints so they don't come back
             coordinator = self.hass.data.get(DOMAIN, {}).get(self._entry.entry_id)
