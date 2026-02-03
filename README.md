@@ -270,6 +270,12 @@ Some findings may be intentional. You can:
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) if available.
 
+## Contributors
+
+Thanks to these awesome people for their contributions and feedback:
+
+- [@loryanstrant](https://github.com/loryanstrant) - Testing and feedback
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
