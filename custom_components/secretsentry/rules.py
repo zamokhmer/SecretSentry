@@ -1807,7 +1807,12 @@ class R093AddonConfigExportRisk(Rule):
 
 
 def get_all_rules() -> list[Rule]:
-    """Get instances of all available rules."""
+    """Get instances of all available rules.
+
+    Note: R080LogContainsSecret is NOT included here as it's only used
+    by the dedicated log scanner (scanner._scan_logs) to avoid duplicate
+    detections when the same file is scanned as both a regular file and a log.
+    """
     return [
         R001InlineSecretKey(),
         R002JWTDetected(),
@@ -1825,7 +1830,7 @@ def get_all_rules() -> list[Rule]:
         R030WebhookShort(),
         R040StorageDirPresent(),
         R060SecretAge(),
-        R080LogContainsSecret(),  # v3.0
+        # R080LogContainsSecret is handled separately in scanner._scan_logs()
         R090EnvFilePresent(),  # v3.0
         R091EnvInlineSecret(),  # v3.0
         R092DockerComposeInlineSecret(),  # v3.0
